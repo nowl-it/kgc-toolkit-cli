@@ -1,4 +1,2 @@
-tools/Il2CppDumper/* filter=lfs diff=lfs merge=lfs -text
-tools/AssetRipper/* filter=lfs diff=lfs merge=lfs -text
 tools/AssetRipper/AssetRipper.GUI.Free filter=lfs diff=lfs merge=lfs -text
 tools/AssetRipper/AssetRipper.GUI.Free.dbg filter=lfs diff=lfs merge=lfs -text
