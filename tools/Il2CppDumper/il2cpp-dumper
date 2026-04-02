@@ -1,0 +1,4 @@
+#!/bin/bash
+# Il2CppDumper wrapper script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec dotnet "$SCRIPT_DIR/Il2CppDumper.dll" "$@"

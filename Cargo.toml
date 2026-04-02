@@ -1,0 +1,83 @@
+[package]
+name = "kgc"
+version = "0.1.0"
+edition = "2021"
+description = "CLI toolkit for King God Castle asset management and analysis"
+authors = ["nowl-it"]
+license = "MIT"
+repository = "https://github.com/nowl-it/kgc-toolkit-cli"
+keywords = ["kgc", "unity", "game", "assets", "proxy"]
+categories = ["command-line-utilities", "game-development"]
+
+[dependencies]
+# CLI
+clap = { version = "4", features = ["derive", "env"] }
+anyhow = "1"
+
+# TUI
+ratatui = "0.29"
+crossterm = "0.28"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+futures-util = "0.3"
+
+# HTTP/Proxy
+hyper = { version = "1", features = ["full"] }
+hyper-util = { version = "0.1", features = ["full"] }
+http-body-util = "0.1"
+reqwest = { version = "0.12", features = ["json", "stream"] }
+rustls = { version = "0.23", features = ["ring"] }
+tokio-rustls = "0.26"
+rustls-pemfile = "2.0"
+rcgen = { version = "0.13", features = ["pem"] }
+webpki-roots = "0.26"
+
+# Data
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+# Crypto
+aes = "0.8"
+ecb = "0.1"
+hex = "0.4"
+base64 = "0.22"
+
+# File processing
+zip = { version = "4", default-features = false, features = ["deflate"] }
+tar = "0.4"
+flate2 = "1"
+walkdir = "2"
+glob = "0.3"
+notify = "8"
+
+# Unity
+unity-yaml-rust = "0.1"
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+regex = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+dirs = "5"
+url = "2"
+socket2 = "0.5"
+bytes = "1"
+brotli = "7"
+indicatif = "0.17"
+console = "0.15"
+dialoguer = "0.11"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[profile.dev]
+opt-level = 1
